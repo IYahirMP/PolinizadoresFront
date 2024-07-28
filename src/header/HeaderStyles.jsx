@@ -1,3 +1,3 @@
 export const headerStyles = {
-    backgroundColor: "#000"
+    backgroundColor: "white"
   };

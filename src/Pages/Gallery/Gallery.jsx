@@ -7,9 +7,9 @@ export default function Gallery (){
     const titleGarden = 'Jardin de Polinizadores del Instituto Tecnológico de Ciudad Altamirano';
 
     return (
-    <Container maxWidth={1} disableGutters>
+    <Container maxWidth='xlg' disableGutters>
         <Box {...theme.gallery.presentation}>
-            <Typography variant='h1' fontSize='3rem' fontWeight={400} color='white'>{titleGarden}</Typography>
+            <Typography variant='h2'>{titleGarden}</Typography>
         </Box>
     </Container>
     );

@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
-import { galleryStyles } from "./gallery/GalleryStyles";
-import { headerStyles } from "./header/HeaderStyles";
+import { galleryStyles } from "./Pages/Gallery/GalleryStyles";
+import { headerStyles } from "./Header/HeaderStyles";
 
 export const theme = createTheme({
     menu: headerStyles,
