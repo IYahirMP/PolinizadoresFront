@@ -21,23 +21,27 @@ import { ThemeProvider } from '@emotion/react'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Gallery/>,
-    errorElement: <ErrorPage/>
+    element: <Header/>,
+    errorElement: <ErrorPage/>,
+    children:[
+    {
+      path:"galeria",
+      element:<Gallery/>
+    },
+    {
+      path: "login",
+      element: <SignIn/>
+    },
+    {
+      path: "signup",
+      element: <SignUp/>
+    }]
   },
-  {
-    path: "/login",
-    element: <SignIn/>
-  },
-  {
-    path: "/signup",
-    element: <SignUp/>
-  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Header/>
       <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>,

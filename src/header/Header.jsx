@@ -13,8 +13,20 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useTheme } from '@mui/material';
+import {Link, redirect} from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
-const pages = ['Galería', 'Iniciar sesión'];
+const pages = [
+  {
+    pagina:'Galería',
+    link:'galeria'
+  },
+  {
+    pagina:'Iniciar sesión',
+    link:'login'
+  }
+];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
@@ -38,11 +50,12 @@ function Header() {
     setAnchorElUser(null);
   };
 
+
   const logoPropsMd = {
     variant: "h6",
     noWrap: true,
     component: "a",
-    href: "#app-bar-with-responsive-menu",
+    href: "/",
     sx: {
       mr: 2,
       display: { xs: 'none', md: 'flex' },
@@ -103,7 +116,7 @@ function Header() {
   const menuMD = {
     sx: { mt: '45px' },
     id: "menu-appbar",
-    anchorEl: { anchorElUser },
+    anchorEl: anchorElUser,
     anchorOrigin: {
       vertical: 'top',
       horizontal: 'right',
@@ -114,11 +127,12 @@ function Header() {
       horizontal: 'right',
     },
     open: Boolean(anchorElUser),
-    onClose: { handleCloseUserMenu },
+    onClose: handleCloseUserMenu,
     color: 'black',
   }
 
   return (
+    <>
     <AppBar position="static" sx={theme.menu}>
       <Container maxWidth="xl">
         <Toolbar disableGutters> 
@@ -130,24 +144,21 @@ function Header() {
             </IconButton>
             <Menu {...menuProps}>
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" color={'black'}>{page}</Typography>
+                <MenuItem key={page.pagina}>
+                  <Link to={`/${page.link}`}><Typography textAlign="center" color={'black'}>{page.pagina}</Typography></Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, color: 'black' }} />
-
-
           <Typography {...logoXs}>LOGO</Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', color: 'black' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', color: 'black' }, flexDirection:{md:'row-reverse'}, paddingRight:{md:'3vw'}  }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, display: 'block', color:'black' }}
+                key={page.pagina}
+                sx={{ my: 2, display: 'block', color:'black', }}
               >
-                {page}
+                <Link to={`/${page.link}`}>{page.pagina}</Link>
               </Button>
             ))}
           </Box>
@@ -168,6 +179,8 @@ function Header() {
         </Toolbar>
       </Container>
     </AppBar>
+    <Outlet></Outlet>
+    </>
   );
 }
 export default Header;

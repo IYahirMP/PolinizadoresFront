@@ -1,0 +1,6 @@
+{
+    "species":[
+        {"id":1, "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":1, "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"}
+    ]
+}
