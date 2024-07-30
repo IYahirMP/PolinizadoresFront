@@ -1,6 +1,22 @@
 {
     "species":[
-        {"id":1, "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
-        {"id":1, "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"}
+        {"id":"1", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"2", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"3", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"4", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"5", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"6", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"7", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"8", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"9", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"10", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"11", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"12", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"13", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"14", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"15", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"16", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"17", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"},
+        {"id":"18", "species":"genus species", "description": "Some species with genus X", "img":"http://127.0.0.1/species/Lepidoptera.jpg"}
     ]
 }
