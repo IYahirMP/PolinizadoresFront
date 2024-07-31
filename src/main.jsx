@@ -23,8 +23,9 @@ import{
 
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools';
 
-import Gallery from './Pages/Gallery/Gallery.jsx'
-import { ThemeProvider } from '@emotion/react'
+import Gallery from './Pages/Gallery/Gallery.jsx';
+import { ThemeProvider } from '@emotion/react';
+import SpeciesDetail from './Pages/SpeciesDetail/SpeciesDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
     {
       path:"galeria",
       element:<Gallery/>
+    },
+    {
+      path:"galeria/:id",
+      element:<SpeciesDetail/>
     },
     {
       path: "login",
