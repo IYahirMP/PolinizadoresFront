@@ -14,13 +14,13 @@ export const galleryStyles = {
     presentationText:{
       color:'#fff',
       width:{
-        xs:'80vw',
+        xs:'90vw',
         md:'60vw'
       },
       fontWeight:'bold',
       textAlign:'center',
       fontSize:{
-        xs:'2rem',
+        xs:'2.5rem',
         md:'5rem'
       }
     },

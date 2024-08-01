@@ -37,19 +37,31 @@ function a11yProps(index) {
   };
 }
 
+const SpeciesDataTab = ({species, description}) =>{
+  const theme = useTheme();
+
+  return(
+    <>
+      <Typography variant="h2" sx={{...theme.speciesDetails.speciesTitle}}>{species}</Typography>
+      <Typography variant="body1" sx={{...theme.speciesDetails.speciesDescription}}>{description}</Typography>
+    </>
+  );
+};
+
 export default function SpeciesDetail() {
   const [value, setValue] = useState(0);
   const theme = useTheme();
   const {id} = useParams();
+  console.log(id);
 
     const fetchData = () => {
-        fetch(`http://127.0.0.1:8000/species/${id}`).then((res) => res.json(),);
+        return fetch(`http://127.0.0.1:8000/species/${String(id)}`).then((res) => res.json(),);
     }
 
     const {isPending, error, data} = useQuery(
         {
             queryKey: ['speciesData'],
-            queryFn: fetchData,
+            queryFn: () => fetchData(),
         }
     )
   const handleChange = (event, newValue) => {
@@ -68,8 +80,9 @@ export default function SpeciesDetail() {
       </Box>
       <CustomTabPanel value={value} index={0}>
         <Box sx={{maxWidth:'80vw',}}>
-            <Typography variant="h2" sx={{...theme.speciesDetails.speciesTitle}}>Especie</Typography>
-            <Typography variant="body1" sx={{...theme.speciesDetails.speciesDescription}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dignissim est a urna dignissim varius. Mauris et ligula nisi. Quisque tincidunt semper erat, eu tristique ante hendrerit in. Fusce in porta ante. Sed sed diam orci. Fusce dignissim gravida odio. Morbi nec diam viverra, luctus mi ut, ullamcorper massa. Vestibulum malesuada tellus nibh, vel aliquet lectus molestie eget. Morbi luctus, nibh sollicitudin pretium consequat, leo dolor rhoncus sem, ullamcorper ultricies massa sem et orci. Donec libero leo, consequat eu purus sed, rutrum tincidunt tortor. Vivamus dolor est, aliquet quis eleifend ac, luctus ac mi.</Typography>
+            {isPending && <Typography variant="h2">Aun no hay datos.</Typography>}
+            {error && <Typography variant="h2">Ha ocurrido un error al solicitar los datos del servidor.</Typography>}
+            {(error != true && data != undefined) && <SpeciesDataTab species={data.species} description={data.description}/>}
         </Box>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>

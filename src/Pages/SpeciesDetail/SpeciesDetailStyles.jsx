@@ -1,7 +1,7 @@
 export const speciesDetailStyles = {
     speciesWrap:{},
     speciesTitle:{
-        mb:'5%'
+        mb:'3vh'
     },
     speciesDescription:{
         fontSize:{

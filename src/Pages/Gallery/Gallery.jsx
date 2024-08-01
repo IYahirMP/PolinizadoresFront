@@ -32,6 +32,9 @@ export default function Gallery (){
         <Box sx={{...theme.gallery.presentation}}>
             <Typography variant='h2' sx={{...theme.gallery.presentationText, md:{fontSize:'10px'}}}>{titleGarden}</Typography>
         </Box>
+        <Box sx={{padding:'5vh', textAlign:'center'}}>
+            <Typography variant='h3'>Especies encontradas</Typography>
+        </Box>
         <Box {...theme.gallery.cardBox}>
             {isPending && <Typography variant="h2">Aun no hay datos.</Typography>}
             {error && <Typography variant="h2">Ha ocurrido un error al solicitar los datos del servidor.</Typography>}
