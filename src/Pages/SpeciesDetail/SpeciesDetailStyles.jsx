@@ -1,11 +1,32 @@
 export const speciesDetailStyles = {
     speciesWrap:{},
-    speciesTitle:{
+    name:{
         mb:'3vh'
     },
-    speciesDescription:{
+    description:{
         fontSize:{
             
         }
     },
+    wrap:{
+        display:'flex',
+        direction:'row',
+        justifyContent:'space-around',
+        padding:'5%'
+    },
+    imageSet:{
+        height:{
+            xs:'80vh',
+            md:'60vh',
+        },
+        width:{
+            xs:'100%',
+            md:'40vw'
+        },
+        overflowY:'auto'
+    },
+    map:{
+        display:'flex',
+        justifyContent:'center'
+    }
   }
