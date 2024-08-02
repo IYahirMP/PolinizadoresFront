@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Header from './Header/Header.jsx'  
+import Header from './header/Header.jsx'  
 import SignIn from './Pages/SignIn/SignIn.jsx'
 import SignUp from './Pages/SignUp/SignUp.jsx'
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'

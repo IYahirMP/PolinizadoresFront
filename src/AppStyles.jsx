@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
 import { galleryStyles } from "./Pages/Gallery/GalleryStyles";
-import { headerStyles } from "./Header/HeaderStyles";
+import { headerStyles } from "./header/HeaderStyles";
 import { speciesDetailStyles } from "./Pages/SpeciesDetail/SpeciesDetailStyles";
 import { galleryCardStyles } from "./Components/GalleryCardStyles";
 
