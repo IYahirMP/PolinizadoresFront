@@ -1,5 +1,4 @@
 export const speciesDetailStyles = {
-    speciesWrap:{},
     name:{
         mb:'3vh'
     },
@@ -10,9 +9,10 @@ export const speciesDetailStyles = {
     },
     wrap:{
         display:'flex',
-        direction:'row',
-        justifyContent:'space-around',
-        padding:'5%'
+        flexDirection:'row',
+        justifyContent:'space-between',
+        padding:'3%',
+        width:'100%'
     },
     imageSet:{
         height:{
@@ -23,7 +23,17 @@ export const speciesDetailStyles = {
             xs:'100%',
             md:'40vw'
         },
-        overflowY:'auto'
+        overflowY:'auto',
+    },
+    graph:{
+        height:{
+            xs:'80vh',
+            md:'60vh',
+        },
+        width:{
+            xs:'100%',
+            md:'40vw'
+        },
     },
     map:{
         display:'flex',
