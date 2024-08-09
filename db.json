@@ -20,6 +20,25 @@
         {"id":"18", "species":"Genero Especie", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dignissim est a urna dignissim varius. Mauris et ligula nisi. Quisque tincidunt semper erat, eu tristique ante hendrerit in.", "img":"http://127.0.0.1/species/Lepidoptera.jpg"}
     ],
     "speciesImage":[
-        {"id":"1", "species":"Danaus plexippus", "img":"http://127.0.0.1/species/0010001.jpg"}
+        {"id":"1", "species":"Danaus plexippus", 
+        "img":[
+            "http://127.0.0.1/species/0010001.png",
+            "http://127.0.0.1/species/0010002.png",
+            "http://127.0.0.1/species/0010004.png",
+            "http://127.0.0.1/species/0010005.png",
+            "http://127.0.0.1/species/0010006.png",
+            "http://127.0.0.1/species/0010007.png",
+            "http://127.0.0.1/species/0010008.png",
+            "http://127.0.0.1/species/0010009.png",
+            "http://127.0.0.1/species/0010010.png",
+            "http://127.0.0.1/species/0010011.png",
+            "http://127.0.0.1/species/0010012.png",
+            "http://127.0.0.1/species/0010013.png",
+            "http://127.0.0.1/species/0010014.png",
+            "http://127.0.0.1/species/0010015.png"
+            ]}
+    ],
+    "graphByMonthSingleSpecies":[
+        {"id": "1", "months":[1,2,3,4,5,6,7,8,9,10,11,12], "data":[100,100,100,150,170,200,250,220,200,150,125,100]}
     ]
 }
