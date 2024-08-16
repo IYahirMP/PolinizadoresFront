@@ -35,6 +35,10 @@ export const speciesDetailStyles = {
             md:'40vw'
         },
     },
+    bigGraph:{
+        height: '80vh',
+        width:'95vw'
+    },
     map:{
         display:'flex',
         justifyContent:'center'

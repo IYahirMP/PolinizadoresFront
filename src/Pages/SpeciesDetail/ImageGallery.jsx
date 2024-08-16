@@ -10,7 +10,7 @@ export default function ImageGallery({styles}){
     const retrieveImages = (id)=>{
       return fetch(`http://127.0.0.1:8000/speciesImage/${id}`).then((data) => data.json(),);
     }
-    const {isLoading: imagesLoading, error: imageError, data: imageData} = useQuery(
+    const {isLoading: imagesLoading, error: imageError, data: imageData, isFetching} = useQuery(
       {
         queryKey: ['speciesImage'],
         queryFn: () => retrieveImages(id)
@@ -19,10 +19,12 @@ export default function ImageGallery({styles}){
 
     return (
         <Paper elevation={3} sx={styles}>
-          {imagesLoading && <Loading/>}
-          {imageError && <Error/>}
-          {imageData != undefined && !imageError && 
-            <ImageList variant="masonry" cols={3} gap={8}>
+          {imagesLoading || isFetching ? (
+            <Loading/>
+          ): imageError ? (
+          <Error/>
+          ): imageData != undefined && (
+          <ImageList variant="masonry" cols={3} gap={8}>
             {imageData.img.map((item) => (
               <ImageListItem key={item}>
                 <img
@@ -33,8 +35,8 @@ export default function ImageGallery({styles}){
                 />
               </ImageListItem>
             ))}
-            </ImageList>
-          }
+          </ImageList>
+          )}
         </Paper>
     )
 }
