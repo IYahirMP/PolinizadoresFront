@@ -1,6 +1,6 @@
 import {Box, Typography, Paper} from "@mui/material";
 import {ImageList, ImageListItem} from "@mui/material";
-import { LineChart } from "@mui/x-charts";
+import {Graph} from "../../Components/GalleryCard/Graph/Graph.jsx";
 import { useTheme } from "@emotion/react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -71,16 +71,12 @@ export default function SpeciesDataTab ({ species, description }) {
             {graphLoading && <Loading/>}
             {graphError && <Error/>}
             {graphData != undefined && !graphError  && 
-              <LineChart
-              xAxis={[{ data: graphData.months }]}
-              series={[
-                {
-                  data: graphData.data,
-                },
-              ]}
-            />
+              <Graph
+                title={`Detecciones de la especie ${species} durante el año ${graphData.year}`}
+                xData={graphData.months}
+                yData={graphData.data}
+              />
             }
-            
           </Paper>
         </Box>
       </Box>
