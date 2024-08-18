@@ -42,5 +42,9 @@ export const speciesDetailStyles = {
     map:{
         display:'flex',
         justifyContent:'center'
+    },
+    classification:{
+        height: '80vh',
+        width:'95vw'
     }
   }
