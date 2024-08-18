@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import { LineChart } from "@mui/x-charts";
+import { ChartsAxis, ChartsXAxis, ChartsYAxis, LineChart } from "@mui/x-charts";
 
 export function Graph ({title, xData, yData}){
     return (
@@ -9,12 +9,18 @@ export function Graph ({title, xData, yData}){
             </Container>
           <Box height={"90%"} width={"100%"}>
             <LineChart
-              xAxis={[{ data: xData }]}
+              xAxis={[{ data: xData, scaleType: 'point' }]}
               series={[
                 {
                   data: yData,
                 },
               ]}
+              grid={
+                {
+                  horizontal:true,
+                  vertical:false
+                }
+              }
             />
           </Box>
         </Box>
