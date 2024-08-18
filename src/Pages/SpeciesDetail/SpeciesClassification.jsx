@@ -5,6 +5,8 @@ import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView';
 import { TreeItem, treeItemClasses } from '@mui/x-tree-view/TreeItem';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
+import Loading from './Loading';
+import Error from './Error';
 
 const CustomTreeItem = styled(TreeItem)(({ theme }) => ({
     color:
@@ -79,7 +81,13 @@ export default function SpeciesClassification() {
 
     return (
         <Box sx={{ minHeight: '70vh', minWidth: '90vw' }}>
-            {classData != undefined && !classError && hierarchy != undefined && <RecursiveTree hierarchy={hierarchy} begin={0}/>}
+            {classIsLoading ? (
+                <Loading/>
+            ): classError ? (
+                <Error/>
+            ): classData != undefined && hierarchy != undefined && (
+            <RecursiveTree hierarchy={hierarchy} begin={0}/>
+            )}
         </Box>
     );
 }

@@ -9,17 +9,9 @@ export function Graph ({title, xData, yData}){
             </Container>
           <Box height={"90%"} width={"100%"}>
             <LineChart
-              xAxis={[{ data: xData, scaleType: 'point' }]}
-              series={[
-                {
-                  data: yData,
-                },
-              ]}
-              grid={
-                {
-                  horizontal:true,
-                  vertical:false
-                }
+              xAxis={[{data: xData, scaleType: 'point' }]}
+              series={[{data: yData,},]}
+              grid={{horizontal:true, vertical:false}
               }
             />
           </Box>
