@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "./Loading";
 import Error from "./Error";
+import API_ENDPOINTS from "../../Config/APISettings";
 
 export default function ImageGallery({styles}){
     const {id} = useParams();

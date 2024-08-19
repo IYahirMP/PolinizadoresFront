@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
 import Error from './Error';
+import API_ENDPOINTS from '../../Config/APISettings';
 
 const CustomTreeItem = styled(TreeItem)(({ theme }) => ({
     color:

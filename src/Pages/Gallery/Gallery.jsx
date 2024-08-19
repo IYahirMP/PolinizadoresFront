@@ -4,6 +4,7 @@ import GalleryCard from "../../Components/GalleryCard/GalleryCard";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import {Pagination} from "@mui/material";
+import API_ENDPOINTS from "../../Config/APISettings";
 
 export default function Gallery (){
     const theme = useTheme();

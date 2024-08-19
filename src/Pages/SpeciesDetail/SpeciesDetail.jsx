@@ -10,6 +10,7 @@ import { Typography } from "@mui/material";
 import SpeciesDataTab from "./SpeciesDataTab.jsx";
 import SpeciesVisualization from "./SpeciesVisualization.jsx";
 import SpeciesClassification from "./SpeciesClassification.jsx";
+import API_ENDPOINTS from "../../Config/APISettings.jsx";
 
 function a11yProps(index) {
   return {

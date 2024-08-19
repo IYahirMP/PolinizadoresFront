@@ -4,6 +4,7 @@ import { Graph } from "../../Components/GalleryCard/Graph/Graph";
 import { useParams } from "react-router-dom";
 import Error from "./Error";
 import Loading from "./Loading";
+import API_ENDPOINTS from "../../Config/APISettings";
 
 export default function SpeciesVisualization({species, styles}){
     const {id} = useParams();
