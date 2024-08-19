@@ -10,7 +10,7 @@ export default function Gallery (){
     const [page, setPage] = useState(1);
 
     const fetchData = (page = 1) => {
-        return fetch(`http://127.0.0.1:8000/species?_page=${page}&_per_page=10`).then((res) => res.json(),);
+        return fetch(API_ENDPOINTS.SPECIES(page)).then((res) => res.json(),);
     }
 
     const {isPending, isError, error, data, isFetching, isPlaceholderData} = useQuery(
@@ -36,9 +36,20 @@ export default function Gallery (){
             <Typography variant='h3'>Especies encontradas</Typography>
         </Box>
         <Box {...theme.gallery.cardBox}>
-            {isPending && <Typography variant="h2">Aun no hay datos.</Typography>}
-            {error && <Typography variant="h2">Ha ocurrido un error al solicitar los datos del servidor.</Typography>}
-            {data != undefined && error != true && data.data.map((card) => <GalleryCard key={card.id} id={card.id} title={card.species} description={card.description} img={card.img}/>)}
+            {isPending ? (
+                <Typography variant="h2">Aun no hay datos.</Typography>
+            ): error ? (
+                <Typography variant="h2">Ha ocurrido un error al solicitar los datos del servidor.</Typography>
+            ): data != undefined && (
+                data.map(
+                    (card) => <GalleryCard 
+                    key={card.id} 
+                    id={card.id} 
+                    title={card.species} 
+                    description={card.description} 
+                    img={card.img}
+                    />
+            ))}
         </Box>
         <Box sx={{display:'flex', justifyContent:'center'}}>
             <Box {...theme.gallery.pagination}>

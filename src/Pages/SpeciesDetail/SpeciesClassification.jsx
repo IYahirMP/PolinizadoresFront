@@ -64,7 +64,7 @@ const RecursiveTree = ({hierarchy, begin}) => {
 export default function SpeciesClassification() {
     const { id } = useParams();
     const fetchData = () => {
-        return fetch(`http://127.0.0.1:8000/classification/${String(id)}`).then((res) => res.json(),);
+        return fetch(API_ENDPOINTS.SPECIES_CLASSIFICATION(id)).then((res) => res.json(),);
       }
     
       const {error: classError, data: classData, isFetching: classIsFetching, isLoading: classIsLoading} = useQuery(
@@ -76,7 +76,7 @@ export default function SpeciesClassification() {
 
     let hierarchy = undefined;
     if (classData != undefined && !classError){
-        hierarchy = Object.entries(classData).filter(([key, value]) => key !== "id");
+        hierarchy = Object.entries(classData[0]).filter(([key, value]) => key !== "id");
     }
 
     return (

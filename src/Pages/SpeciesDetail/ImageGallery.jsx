@@ -8,7 +8,7 @@ import Error from "./Error";
 export default function ImageGallery({styles}){
     const {id} = useParams();
     const retrieveImages = (id)=>{
-      return fetch(`http://127.0.0.1:8000/speciesImage/${id}`).then((data) => data.json(),);
+      return fetch(API_ENDPOINTS.SPECIES_IMAGES(id)).then((data) => data.json(),);
     }
     const {isLoading: imagesLoading, error: imageError, data: imageData, isFetching} = useQuery(
       {
@@ -25,7 +25,7 @@ export default function ImageGallery({styles}){
           <Error/>
           ): imageData != undefined && (
           <ImageList variant="masonry" cols={3} gap={8}>
-            {imageData.img.map((item) => (
+            {imageData[0].img.map((item) => (
               <ImageListItem key={item}>
                 <img
                   srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}

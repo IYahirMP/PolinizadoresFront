@@ -9,7 +9,7 @@ export default function SpeciesVisualization({species, styles}){
     const {id} = useParams();
 
     const retrieveGraphData = (id) => {
-        return fetch(`http://127.0.0.1:8000/graphByMonthSingleSpecies/${id}`).then((data) => data.json(),);
+        return fetch(API_ENDPOINTS.SPECIES_GRAPH_MONTH(id)).then((data) => data.json(),);
       }
 
     const {isLoading: graphLoading, error: graphError, data: graphData, isFetching} = useQuery({
@@ -25,9 +25,9 @@ export default function SpeciesVisualization({species, styles}){
                 <Error/>
             ) : (graphData != undefined) &&(
                 <Graph
-                        title={`Detecciones de la especie ${species} durante el año ${graphData.year}`}
-                        xData={graphData.months}
-                        yData={graphData.data}
+                        title={`Detecciones de la especie ${species} durante el año ${graphData[0].year}`}
+                        xData={graphData[0].months}
+                        yData={graphData[0].data}
                     />
             )}
         </Paper>

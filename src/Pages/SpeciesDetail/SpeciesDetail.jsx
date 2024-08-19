@@ -22,16 +22,15 @@ export default function SpeciesDetail() {
   const [value, setValue] = useState(0);
   const theme = useTheme().speciesDetails;
   const { id } = useParams();
-  console.log(id);
 
-  const fetchData = () => {
-    return fetch(`http://127.0.0.1:8000/species/${String(id)}`).then((res) => res.json(),);
+  const fetchData = (id) => {
+    return fetch(API_ENDPOINTS.SPECIES_DETAIL(id)).then((res) => res.json(),);
   }
 
   const {error, data, isFetching, isLoading} = useQuery(
     {
       queryKey: ['speciesData'],
-      queryFn: () => fetchData(),
+      queryFn: () => fetchData(id),
     }
   )
   const handleChange = (event, newValue) => {
@@ -55,7 +54,7 @@ export default function SpeciesDetail() {
           ): error ? (
             <Typography variant="h2">Ha ocurrido un error al solicitar los datos del servidor.</Typography>
           ): data != undefined && (
-          <SpeciesDataTab species={data.species} description={data.description} />
+          <SpeciesDataTab species={data[0].species} description={data[0].description} />
           )}
         </Box>
       </CustomTabPanel>
@@ -66,7 +65,7 @@ export default function SpeciesDetail() {
           ): error ? (
             <Typography variant="h2">Ha ocurrido un error al solicitar los datos del servidor.</Typography>
           ): data != undefined && (
-            <SpeciesVisualization species={data.species} styles={{...theme.bigGraph}}/>
+            <SpeciesVisualization species={data[0].species} styles={{...theme.bigGraph}}/>
           )}
         </Box>
       </CustomTabPanel>

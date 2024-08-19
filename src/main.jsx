@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Header from './header/Header.jsx'  
+import Layout from './Pages/Layout.jsx'
 import SignIn from './Pages/SignIn/SignIn.jsx'
 import SignUp from './Pages/SignUp/SignUp.jsx'
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
@@ -30,9 +30,13 @@ import SpeciesDetail from './Pages/SpeciesDetail/SpeciesDetail.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Header/>,
+    element: <Layout/>,
     errorElement: <ErrorPage/>,
     children:[
+    {
+      path:"/",
+      element:<Gallery/>
+    },
     {
       path:"galeria",
       element:<Gallery/>
@@ -55,12 +59,10 @@ const router = createBrowserRouter([
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <RouterProvider router={router} />
       </ThemeProvider>
       <ReactQueryDevtools/>
     </QueryClientProvider>
-  </React.StrictMode>,
 )
